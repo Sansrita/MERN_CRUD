@@ -4,6 +4,12 @@ import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import Register from './pages/Register'
 import Login from './pages/Login'
+import axios from 'axios'
+
+axios.defaults.baseURL= 'http://localhost:8000';
+axios.defaults.withCredentials=true
+
+
 function App() {
   
 
@@ -12,8 +18,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path='/' element={<Home/> } />
-        <Route path='/' element={<Register/> } />
-        <Route path='/' element={<Login/> } />
+        <Route path='/register' element={<Register/> } />
+        <Route path='/login' element={<Login/> } />
 
       </Routes>
     </>
